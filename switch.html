@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch case / Escolha Caso </title>
+   
+   <style>
+    body{
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    img{
+        max-width: 200px;
+        max-height: 200px;
+        margin: 10px;
+    }
+   </style>
+
+</head>
+<body>
+
+<h1>Selecione um dia da semana</h1>
+<select name="" id="diaSemana" onchange="mostrarMensagem()">
+  <option value="Default"> Slecione um dia </option>
+  <option value="segunda"> Segunda-feira </option>
+  <option value="terca"> Terça-feira</option>
+  <option value="quarta"> Quarta-feira</option>
+  <option value="quinta"> Quinta-feira</option>
+  <option value="sexta"> Sexta-feira</option>
+  <option value="sabado"> Sabado </option>
+  <option value="domingo"> Domingo</option>
+
+</select>
+    
+<div id="mensagem"></div>
+
+
+<script>
+    function mostrarMensagem(){
+        var select = document.getElementById('diaSemana');
+         var diaSelecionado = select.value;
+         var mensagemElemento = document.getElementById('mensagem');
+         var mensagem = "";
+         var imagemSrc = "";
+
+         switch (diaSelecionado) {
+            case "segunda": 
+            mensagem = "Bom dia flor do dia";
+            imagemSrc = "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2022/07/23/1306233357-como-plantar-e-cuidar-de-margaridas-pexels-sebastian-sorensen.jpg";
+            break;
+            case "terca":
+                mensagem = " é terça-feira mas podia ser sexta";
+                imagemSrc = "https://www.tribunadeituverava.com.br/wp-content/uploads/2018/08/maca-feliz-e-triste.jpg";
+                break;
+                case "quarta":
+                mensagem = "oi oi quarta";
+                imagemSrc = "https://media1.giphy.com/media/dx6mWrBsRayLR68aie/giphy.gif?cid=6c09b952hfpdd2v39smr67xweayq4keelg1w9vidfit1b1s2&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s";
+                break;
+                case "quinta":
+                mensagem = " é quinta mas podia ser sexta mas ops ja vai ser";
+                imagemSrc = "https://images.sympla.com.br/5e5c1083390f4-xs.jpg";
+                break;
+                case "sexta":
+                mensagem = " sexta é sexta";
+                imagemSrc = "https://i.scdn.co/image/ab67616d0000b273799b70723172da59246f1c54";
+                break;
+                case "sabado":
+                mensagem = "sabadou";
+                imagemSrc = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTorUKmYt1UPz4803fuLglqhZIQSg-BMLFuTtiTUm_v-_s2tw6tDEv8Q1e9W8YkWV99Ods&usqp=CAU";
+                break;
+                case "domingo":
+                mensagem = " domingou";
+                imagemSrc = "https://i0.wp.com/luifanger.com.br/2017/wp-content/uploads/2021/04/domingo.png?fit=640%2C426&ssl=1";
+                break;
+                default:
+                    mensagem = "Por favor, selecione um dia da semana.";
+
+
+
+         }
+
+         mensagemElemento.innerHTML = "<p>" + mensagem + "</p>";
+         if (imagemSrc !== ""){
+            mensagemElemento.innerHTML += "<img src = '" + imagemSrc + "'>";
+         }
+    }
+
+</script>
+
+</body>
+</html>
